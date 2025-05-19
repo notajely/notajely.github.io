@@ -1,0 +1,12 @@
+- title: Repositories
+  url: /repositories/
+  icon: fa-github
+- title: teaching
+  url: /teaching/
+  nav: false
+- title: submenus
+  url: "#"
+  nav: false
+  submenu:
+    - title: " " # Keep this for an empty submenu
+      url: "#"

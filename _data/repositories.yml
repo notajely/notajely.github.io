@@ -1,14 +1,7 @@
-github_users:
-  - torvalds
-  - alshedivat
-
-repo_description_lines_max: 2
-
-github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+repositories:
+  - name: cusanus_topicmodeling
+    url: https://github.com/notajely/cusanus_topicmodeling
+    description: Topic modeling for Nicholas of Cusa's Latin sermons
+  - name: llms_gender_bias
+    url: https://github.com/notajely/llms_gender_bias
+    description: Research on gender bias in large language models
