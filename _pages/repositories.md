@@ -6,7 +6,6 @@ description: My selected GitHub repositories.
 nav: true
 nav_order: 4
 ---
-
 {% if site.data.repositories.github_users %}
 
 ## GitHub users
@@ -37,13 +36,15 @@ nav_order: 4
 
 ## GitHub Repositories
 
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
+<div class="row">
   {% for repo in site.data.repositories.repositories %}
-    <div class="repo p-2 text-center">
-      <a href="{{ repo.url }}" target="_blank">
-        <h4>{{ repo.name }}</h4>
-        <p>{{ repo.description }}</p>
-      </a>
+    <div class="col-md-6 mb-3">
+      <div class="repo p-3 text-center border rounded h-100">
+        <a href="{{ repo.url }}" target="_blank" class="text-decoration-none">
+          <h5 class="repo-name">{{ repo.name }}</h5>
+          <p class="repo-description text-muted">{{ repo.description }}</p>
+        </a>
+      </div>
     </div>
   {% endfor %}
 </div>
