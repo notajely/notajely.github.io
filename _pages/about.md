@@ -6,7 +6,7 @@ subtitle: Digital Humanities | NLP | AI Ethics
 
 profile:
   align: right
-  image: cat_img.jpg
+  image: profile_pic.jpg
   image_circular: true # crops the image to make it circular
   more_info: >
     <p>Uppsala, Sweden</p>
@@ -25,7 +25,8 @@ latest_posts:
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
-
 I am an interdisciplinary researcher focusing on how AI systems replicate and amplify societal bias. By integrating methods from NLP, cognitive science, and AI ethics, I analyze the structural and conceptual foundations of bias in large language models, with an emphasis on interpretability and socio-technical mitigation strategies.
 
 You can find my CV [here](/assets/pdf/Jiayu_Shen_CV.pdf).
+
+I'm really interested in beer and am currently researching different lagers, IPAs, pilsners, and wheat beers 🍺.
