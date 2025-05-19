@@ -1,21 +1,28 @@
 name: Deploy Jekyll site to Pages
 
 on:
+  # Runs on pushes targeting the default branch
   push:
     branches:
-      - main
+      - main # 或者你的默认分支名，比如 master
+
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-  group: pages
+  group: "pages"
   cancel-in-progress: false
 
 jobs:
+  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
@@ -25,27 +32,41 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.2"
-          bundler-cache: true
-          cache-version: 0
+          ruby-version: "3.2" # 确保这是你项目需要的 Ruby 版本
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          cache-version: 0 # Increment this number if you need to re-download cached gems
 
       - name: Install Imagemagick
         run: |
           sudo apt-get update
           sudo apt-get install -y imagemagick
 
+      # --- 新增：安装 Python 和 Jupyter ---
+      - name: Setup Python
+        uses: actions/setup-python@v5 # 使用较新版本的 action
+        with:
+          python-version: "3.x" # 或者指定一个具体的版本，如 '3.10', '3.11'
+
+      - name: Install Jupyter and nbconvert
+        run: |
+          python -m pip install --upgrade pip
+          pip install jupyter nbconvert pandas # pandas 经常在 notebook 中使用，一并安装
+      # --- 新增步骤结束 ---
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
 
       - name: Build with Jekyll
+        # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
 
       - name: Upload artifact
+        # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
 
+  # Deployment job
   deploy:
     environment:
       name: github-pages
