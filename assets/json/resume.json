@@ -33,36 +33,19 @@
   "skills": [
     {
       "name": "Programming",
-      "keywords": [
-        "Python"
-      ]
+      "keywords": ["Python"]
     },
     {
       "name": "NLP Tools & Libraries",
-      "keywords": [
-        "NLTK",
-        "spaCy",
-        "Gensim",
-        "Transformers",
-        "BERT",
-        "RoBERTa",
-        "GPT"
-      ]
+      "keywords": ["NLTK", "spaCy", "Gensim", "Transformers", "BERT", "RoBERTa", "GPT"]
     },
     {
       "name": "Machine Learning",
-      "keywords": [
-        "Neural Networks",
-        "TensorFlow",
-        "PyTorch"
-      ]
+      "keywords": ["Neural Networks", "TensorFlow", "PyTorch"]
     },
     {
       "name": "Data Visualization",
-      "keywords": [
-        "Matplotlib",
-        "Seaborn"
-      ]
+      "keywords": ["Matplotlib", "Seaborn"]
     }
   ],
   "languages": [
